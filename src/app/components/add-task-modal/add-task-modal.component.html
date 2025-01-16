@@ -1,0 +1,69 @@
+<div class="modal-overlay" (click)="close.emit()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <h2>Add New Task</h2>
+  
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input 
+            type="text" 
+            id="title"
+            name="title"
+            [(ngModel)]="taskForm.title"
+            placeholder="e.g. Take coffee break"
+          >
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea 
+            id="description"
+            name="description"
+            [(ngModel)]="taskForm.description"
+            placeholder="e.g. It's always good to take a break. This 15 minute break will recharge the batteries a little."
+            rows="4"
+          ></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label>Subtasks</label>
+          <div class="subtasks">
+            <div class="subtask-input" *ngFor="let subtask of taskForm.subtasks; let i = index">
+              <input 
+                type="text"
+                [(ngModel)]="taskForm.subtasks[i]"
+                [name]="'subtask-' + i"
+                placeholder="e.g. Make coffee"
+              >
+              <button type="button" class="delete-subtask" (click)="removeSubtask(i)">
+                <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="#828FA3" fill-rule="evenodd">
+                    <path d="m12.728 0 2.122 2.122L2.122 14.85 0 12.728z"/>
+                    <path d="M0 2.122 2.122 0 14.85 12.728l-2.122 2.122z"/>
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="add-subtask" (click)="addSubtask()">
+            + Add New Subtask
+          </button>
+        </div>
+  
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select id="status" name="status" [(ngModel)]="taskForm.status">
+            <option value="TODO">Todo</option>
+            <option value="DOING">Doing</option>
+            <option value="DONE">Done</option>
+          </select>
+        </div>
+  
+        <button type="submit" class="create-task">
+          Create Task
+        </button>
+      </form>
+    </div>
+  </div>
+  
+  
