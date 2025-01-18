@@ -9,14 +9,8 @@
   height: 100vh;
   background: #20212C;
   color: white;
-  transition: background-color 0.3s, color 0.3s;
 
-  &.light-theme {
-    background: #F4F7FD;
-    color: #000112;
-  }
-
-  &.dark-theme {
+  &.dark {
     background: #20212C;
     color: white;
   }
@@ -28,20 +22,9 @@
   padding: 32px 0;
   display: flex;
   flex-direction: column;
-  transition: background-color 0.3s, border-color 0.3s;
 
   &.hidden {
     display: none;
-  }
-
-  .light-theme & {
-    background: #FFFFFF;
-    border-right: 1px solid #E4EBFA;
-  }
-
-  .dark-theme & {
-    background: #2B2C37;
-    border-right: 1px solid #3E3F4E;
   }
 
   .logo {
@@ -128,13 +111,6 @@
       background: #20212C;
       border-radius: 6px;
       margin-bottom: 22px;
-
-      .light-theme & {
-        background: #F4F7FD;
-      }
-      .dark-theme & {
-        background: #20212C;
-      }
 
       .toggle {
         width: 40px;
@@ -253,13 +229,6 @@
         margin-bottom: 24px;
         text-transform: uppercase;
 
-        .light-theme & {
-          color: #828FA3;
-        }
-        .dark-theme & {
-          color: #828FA3;
-        }
-
         .column-dot {
           width: 15px;
           height: 15px;
@@ -278,48 +247,20 @@
           border-radius: 8px;
           box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
           cursor: pointer;
-          transition: background-color 0.3s, box-shadow 0.3s;
-
-          .light-theme & {
-            background: #FFFFFF;
-            box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
-          }
-
-          .dark-theme & {
-            background: #2B2C37;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-          }
 
           &:hover {
-            .light-theme & {
-              background: #FFFFFF;
-            }
-            .dark-theme & {
-              background: #383A4B;
-            }
+            background: #383A4B;
           }
 
           h3 {
             color: white;
             font-size: 15px;
             margin-bottom: 8px;
-            .light-theme & {
-              color: #000112;
-            }
-            .dark-theme & {
-              color: #FFFFFF;
-            }
           }
 
           p {
             color: #828FA3;
             font-size: 12px;
-            .light-theme & {
-              color: #828FA3;
-            }
-            .dark-theme & {
-              color: #828FA3;
-            }
           }
         }
       }
@@ -330,7 +271,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 39px;
 
         button {
           background: none;
@@ -346,14 +286,6 @@
         }
       }
     }
-  }
-
-  .light-theme & {
-    background: #F4F7FD;
-  }
-
-  .dark-theme & {
-    background: #20212C;
   }
 }
 

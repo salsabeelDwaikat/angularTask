@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TaskForm } from '../../interfaces/kanban.interface';
+import { TaskForm } from '../../interfaces/task-form.interface';
 
 @Component({
   selector: 'app-add-task-modal',
