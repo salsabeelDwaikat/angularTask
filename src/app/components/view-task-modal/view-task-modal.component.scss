@@ -1,0 +1,170 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: #2B2C37;
+    border-radius: 6px;
+    padding: 32px;
+    width: 100%;
+    max-width: 480px;
+    margin: 16px;
+  
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+  
+      h2 {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding-right: 24px;
+      }
+  
+      .more {
+        background: none;
+        border: none;
+        padding: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        &:hover svg g {
+          fill: #fff;
+        }
+      }
+    }
+  
+    .description {
+      color: #828FA3;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+  
+    .subtasks {
+      margin-bottom: 24px;
+  
+      .subtasks-label {
+        color: #fff;
+        font-size: 12px;
+        margin-bottom: 16px;
+        display: block;
+      }
+  
+      .subtasks-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+  
+      .subtask {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background: #20212C;
+        padding: 13px;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+  
+        input[type="checkbox"] {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+  
+        .checkmark {
+          height: 16px;
+          width: 16px;
+          background: #2B2C37;
+          border: 1px solid rgba(130, 143, 163, 0.25);
+          border-radius: 2px;
+          position: relative;
+  
+          &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 4px;
+            top: 1px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+          }
+        }
+  
+        input:checked ~ .checkmark {
+          background: #635FC7;
+          border-color: #635FC7;
+  
+          &:after {
+            display: block;
+          }
+        }
+  
+        .subtask-title {
+          color: #fff;
+          font-size: 12px;
+          transition: color 0.2s;
+        }
+  
+        &.completed .subtask-title {
+          color: #828FA3;
+          text-decoration: line-through;
+        }
+  
+        &:hover {
+          background: rgba(99, 95, 199, 0.25);
+        }
+      }
+    }
+  
+    .status {
+      label {
+        color: #fff;
+        font-size: 12px;
+        margin-bottom: 8px;
+        display: block;
+      }
+  
+      select {
+        width: 100%;
+        background: #2B2C37;
+        border: 1px solid #3E3F4E;
+        border-radius: 4px;
+        padding: 8px 16px;
+        color: #fff;
+        font-size: 13px;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23635FC7' stroke-width='2' fill='none' d='m1 1 4 4 4-4'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        cursor: pointer;
+  
+        &:focus {
+          border-color: #635FC7;
+          outline: none;
+        }
+      }
+    }
+  }
+  
+  

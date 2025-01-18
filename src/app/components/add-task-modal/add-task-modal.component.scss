@@ -1,133 +1,132 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
-  .modal {
-    background: #2B2C37;
-    border-radius: 6px;
-    padding: 32px;
-    width: 100%;
-    max-width: 480px;
-    margin: 16px;
-  
-    h2 {
-      color: #fff;
-      font-size: 18px;
-      margin-bottom: 24px;
-    }
-  }
-  
-  .form-group {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #2B2C37;
+  border-radius: 6px;
+  padding: 32px;
+  width: 100%;
+  max-width: 480px;
+  margin: 16px;
+
+  h2 {
+    color: #fff;
+    font-size: 18px;
     margin-bottom: 24px;
-  
-    label {
-      color: #fff;
-      font-size: 12px;
-      margin-bottom: 8px;
-      display: block;
+  }
+}
+
+.form-group {
+  margin-bottom: 24px;
+
+  label {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    background: #2B2C37;
+    border: 1px solid #3E3F4E;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 13px;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.25);
     }
-  
-    input, textarea, select {
-      width: 100%;
-      background: #2B2C37;
-      border: 1px solid #3E3F4E;
-      border-radius: 4px;
-      padding: 8px 16px;
-      color: #fff;
-      font-size: 13px;
-  
-      &::placeholder {
-        color: rgba(255, 255, 255, 0.25);
-      }
-  
-      &:focus {
-        border-color: #635FC7;
-        outline: none;
-      }
-    }
-  
-    textarea {
-      resize: vertical;
-      min-height: 112px;
+
+    &:focus {
+      border-color: #635FC7;
+      outline: none;
     }
   }
-  
-  .subtasks {
-    margin-bottom: 12px;
+
+  textarea {
+    resize: vertical;
+    min-height: 112px;
+  }
+}
+
+.subtasks {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .subtask-input {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-  
-    .subtask-input {
+    gap: 16px;
+    align-items: center;
+
+    input {
+      flex: 1;
+    }
+
+    .delete-subtask {
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
       display: flex;
-      gap: 16px;
       align-items: center;
-  
-      input {
-        flex: 1;
-      }
-  
-      .delete-subtask {
-        background: none;
-        border: none;
-        padding: 4px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-  
-        &:hover svg g {
-          fill: #EA5555;
-        }
+      justify-content: center;
+
+      &:hover svg g {
+        fill: #EA5555;
       }
     }
   }
-  
-  .add-subtask {
-    width: 100%;
-    background: rgba(99, 95, 199, 0.1);
-    border: none;
-    border-radius: 20px;
-    color: #635FC7;
-    padding: 12px;
-    font-weight: bold;
-    cursor: pointer;
-  
-    &:hover {
-      background: rgba(99, 95, 199, 0.25);
-    }
+}
+
+.add-subtask {
+  width: 100%;
+  background: rgba(99, 95, 199, 0.1);
+  border: none;
+  border-radius: 20px;
+  color: #635FC7;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(99, 95, 199, 0.25);
   }
-  
-  .create-task {
-    width: 100%;
-    background: #635FC7;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    padding: 12px;
-    font-weight: bold;
-    cursor: pointer;
-  
-    &:hover {
-      background: #A8A4FF;
-    }
+}
+
+.create-task {
+  width: 100%;
+  background: #635FC7;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background: #A8A4FF;
   }
-  
-  select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23635FC7' stroke-width='2' fill='none' d='m1 1 4 4 4-4'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px !important;
-  }
-  
-  
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23635FC7' stroke-width='2' fill='none' d='m1 1 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px !important;
+}
+

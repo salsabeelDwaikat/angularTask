@@ -1,0 +1,53 @@
+<div class="modal-overlay" (click)="close.emit()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>{{task.title}}</h2>
+      <button class="more">
+        <svg width="5" height="20" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#828FA3" fill-rule="evenodd">
+            <circle cx="2.308" cy="2.308" r="2.308"/>
+            <circle cx="2.308" cy="10" r="2.308"/>
+            <circle cx="2.308" cy="17.692" r="2.308"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <p class="description">{{task.description}}</p>
+
+    <div class="subtasks">
+      <label class="subtasks-label">
+        Subtasks ({{getCompletedSubtasks()}} of {{task.subtasks.length}})
+      </label>
+      <div class="subtasks-list">
+        <label 
+          class="subtask" 
+          *ngFor="let subtask of task.subtasks; let i = index"
+          [class.completed]="subtask.isCompleted"
+        >
+          <input 
+            type="checkbox" 
+            [checked]="subtask.isCompleted"
+            (change)="onSubtaskToggle(i, $event)"
+          >
+          <span class="checkmark"></span>
+          <span class="subtask-title">{{subtask.title}}</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="status">
+      <label for="status">Current Status</label>
+      <select 
+        id="status" 
+        [value]="task.status"
+        (change)="onStatusChange($event)"
+      >
+        <option value="TODO">Todo</option>
+        <option value="DOING">Doing</option>
+        <option value="DONE">Done</option>
+      </select>
+    </div>
+  </div>
+</div>
+
